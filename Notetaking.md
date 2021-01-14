@@ -685,6 +685,130 @@ Audience
     
     13. Managing Files Outside of Git
 
+        ❯ ls
+        LICENSE.md README.md
+        ❯ touch myfile.txt
+        ❯ ls
+        LICENSE.md README.md  myfile.txt
+        ❯ mv LICENSE.md LICENSE.txt
+        ❯ ls -l
+        total 16
+        -rw-r--r--  1 migueldominguezsanchez  staff  24 13 ene 13:02 LICENSE.txt
+        -rw-r--r--  1 migueldominguezsanchez  staff  64 14 ene 15:19 README.md
+        -rw-r--r--  1 migueldominguezsanchez  staff   0 14 ene 15:42 myfile.txt
+        ❯ git status
+        On branch master
+        Changes not staged for commit:
+        (use "git add/rm <file>..." to update what will be committed)
+        (use "git checkout -- <file>..." to discard changes in working directory)
+
+            deleted:    LICENSE.md
+
+        Untracked files:
+        (use "git add <file>..." to include in what will be committed)
+
+            LICENSE.txt
+            myfile.txt
+
+        no changes added to commit (use "git add" and/or "git commit -a")
+        ❯ git add -u
+        ❯ git status
+        On branch master
+        Changes to be committed:
+        (use "git reset HEAD <file>..." to unstage)
+
+            deleted:    LICENSE.md
+
+        Untracked files:
+        (use "git add <file>..." to include in what will be committed)
+
+            LICENSE.txt
+            myfile.txt
+        
+        ❯ git add -A
+        ❯ git status
+        On branch master
+        Changes to be committed:
+        (use "git reset HEAD <file>..." to unstage)
+
+            renamed:    LICENSE.md -> LICENSE.txt
+            new file:   myfile.txt
+        
+        ❯ git commit -m "rename and add"
+        ❯ ls -l
+        total 16
+        -rw-r--r--  1 migueldominguezsanchez  staff  24 13 ene 13:02 LICENSE.txt
+        -rw-r--r--  1 migueldominguezsanchez  staff  64 14 ene 15:19 README.md
+        -rw-r--r--  1 migueldominguezsanchez  staff   0 14 ene 15:42 myfile.txt
+
+        ❯ rm myfile.txt
+        ❯ git status
+        On branch master
+        Changes not staged for commit:
+        (use "git add/rm <file>..." to update what will be committed)
+        (use "git checkout -- <file>..." to discard changes in working directory)
+
+            deleted:    myfile.txt
+
+        no changes added to commit (use "git add" and/or "git commit -a")
+
+        ❯ git add -u
+        ❯ git status
+        On branch master
+        Changes to be committed:
+        (use "git reset HEAD <file>..." to unstage)
+
+            deleted:    myfile.txt
+
+        ❯ git commit -m "remove myfile.txt"
+
+        ❯ ls
+        LICENSE.txt README.md
+
+    14. Excluding Unwanted Files
+
+        ❯ pwd
+        ❯ git status
+        ❯ ls -la
+        ❯ code application.log
+        ❯ ls
+        LICENSE.txt     README.md       application.log
+
+        ❯ git status
+        On branch master
+        Untracked files:
+        (use "git add <file>..." to include in what will be committed)
+
+            application.log
+
+        nothing added to commit but untracked files present (use "git add" to track)
+        ❯ code .gitignore
+
+        ❯ git status
+        On branch master
+        Untracked files:
+        (use "git add <file>..." to include in what will be committed)
+
+            .gitignore
+
+        nothing added to commit but untracked files present (use "git add" to track)
+        ❯ git add .gitignore
+        ❯ git commit -m "Adding gitignore file"
+        [master 0f8058b] Adding gitignore file
+        1 file changed, 1 insertion(+)
+        create mode 100644 .gitignore
+        ❯ git status
+        On branch master
+        nothing to commit, working tree clean
+        ❯ ls
+        ❯ rm application.log
+    
+5. Advanced Beyond the Basics
+
+    1. Advanced Overview
+
+
+
         /.../
 
 
