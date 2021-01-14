@@ -645,10 +645,45 @@ Audience
         – '--decorate' which will tell us which commit are part of wich branches and other labels within the gir repository
         – 'git log --online --graph --decorate'
         – and then '--all' which will provide the history of all the branches that are available in this repository
+    
+        ❯ git log --oneline --graph --decorate --all
 
+        ❯ git config --global alias.hist "log --oneline --graph --decorate --all"
 
+        ❯ git config --global --list
 
+        ❯ git hist
 
+        ❯ git hist -- LICENSE.md
+    
+    12. Rename and Delete Files
+
+        ❯ code example.txt
+        ❯ git status
+        ❯ git add example.txt
+        ❯ git commit -m "adding example file"
+        ❯ git mv example.txt demo.txt
+        ❯ git status
+        	renamed:    example.txt -> demo.txt
+        ❯ ls
+        LICENSE.md README.md  demo.txt
+        ❯ git commit -m "renaming example"
+        [master 9c30ee7] renaming example
+        1 file changed, 0 insertions(+), 0 deletions(-)
+        rename example.txt => demo.txt (100%)
+
+        ❯ ls
+        LICENSE.md README.md  demo.txt
+        ❯ git rm demo.txt
+        rm 'demo.txt'
+        ❯ ls
+        LICENSE.md README.md
+        ❯ git status
+        	deleted:    demo.txt
+        ❯ git commit -m "deleting demo file"
+        ❯ git status
+    
+    13. Managing Files Outside of Git
 
         /.../
 
