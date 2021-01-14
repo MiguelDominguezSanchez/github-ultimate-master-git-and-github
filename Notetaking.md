@@ -858,8 +858,90 @@ Audience
                 – Automatic Merge Not Possible
                 – Conflicting Merge State
                 – Change Saved in Merge Commit
+    
+    4. Special Markers
 
+        Special Markers
 
+            – Like "pointers"
+            – HEAD
+                – Points to Last Commit of Current Branch
+                – Can be Moved (Advanced)
+    
+    5. Simple Branching Example
+
+        ❯ git branch
+        * master
+
+        ❯ git checkout -b updates
+        M	README.md
+        Switched to a new branch 'updates'
+
+        ❯ code README.md
+        ❯ git add .
+        ❯ git commit -m "Adding updates from branch"
+        ❯ git status
+        ❯ git hist
+
+          * a638409 (HEAD -> updates) Adding updates from branch
+         * 0f8058b (master) Adding gitignore file
+         * 68d1cc8 remove myfile.txt
+         * d651843 rename and add
+         * c03db3c deleting demo file
+         * 9c30ee7 renaming example
+         * eb17179 adding example file
+         * ca8a4cf Updating README
+         * 7006752 Adding both a README and a LICENSE file to the repo
+
+        ❯ git diff updates master
+
+        ❯ git checkout master
+        Switched to branch 'master'
+
+        * a638409 (updates) Adding updates from branch
+         * 0f8058b (HEAD -> master) Adding gitignore file
+         * 68d1cc8 remove myfile.txt
+         * d651843 rename and add
+         * c03db3c deleting demo file
+         * 9c30ee7 renaming example
+         * eb17179 adding example file
+         * ca8a4cf Updating README
+         * 7006752 Adding both a README and a LICENSE file to the repo
+        
+        ❯ git merge updates
+        Updating 0f8058b..a638409
+        Fast-forward
+        README.md | 4 +++-
+        1 file changed, 3 insertions(+), 1 deletion(-)
+
+        ❯ git hist
+
+        * a638409 (HEAD -> master, updates) Adding updates from branch
+         * 0f8058b Adding gitignore file
+         * 68d1cc8 remove myfile.txt
+         * d651843 rename and add
+         * c03db3c deleting demo file
+         * 9c30ee7 renaming example
+         * eb17179 adding example file
+         * ca8a4cf Updating README
+         * 7006752 Adding both a README and a LICENSE file to the repo
+
+        ❯ git branch -d updates
+        Deleted branch updates (was a638409).
+
+        ❯ git branch
+        * master
+        
+        ❯ git hist
+        * a638409 (HEAD -> master) Adding updates from branch
+         * 0f8058b Adding gitignore file
+         * 68d1cc8 remove myfile.txt
+         * d651843 rename and add
+         * c03db3c deleting demo file
+         * 9c30ee7 renaming example
+         * eb17179 adding example file
+         * ca8a4cf Updating README
+         * 7006752 Adding both a README and a LICENSE file to the repo
 
 
         /.../
