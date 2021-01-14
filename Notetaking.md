@@ -807,6 +807,59 @@ Audience
 
     1. Advanced Overview
 
+        – Compare Differences
+        – Branching, Merging and Conflict Resolution
+        – Milestones
+        – Work in Progress
+        – Time Travel
+        – Others
+    
+    2. Comparing Differences
+
+        ❯ git hist
+
+       * 0f8058b (HEAD -> master) Adding gitignore file
+       * 68d1cc8 remove myfile.txt
+       * d651843 rename and add
+       * c03db3c deleting demo file
+       * 9c30ee7 renaming example
+       * eb17179 adding example file
+       * ca8a4cf Updating README
+       * 7006752 Adding both a README and a LICENSE file to the repo
+        
+        ❯ git diff ca8a4cf HEAD
+        ❯ git difftool ca8a4cf HEAD
+        ❯ code README.md
+        ❯ git status
+        On branch master
+        Changes not staged for commit:
+        (use "git add <file>..." to update what will be committed)
+        (use "git checkout -- <file>..." to discard changes in working directory)
+
+            modified:   README.md
+
+        no changes added to commit (use "git add" and/or "git commit -a")
+        ❯ git diff
+        ❯ git help diff
+    
+    3. Branching and Merge Types
+
+        Branching
+
+            – Important Concept
+            – Branch = Timeline of Commits
+            – Branch Names are Labels
+                – Deletion Removes Label Only
+        
+        Types of Merges
+
+            – Manual
+
+                – Automatic Merge Not Possible
+                – Conflicting Merge State
+                – Change Saved in Merge Commit
+
+
 
 
         /.../
